@@ -17,8 +17,8 @@ def send_message1():
 
 
 schedule.every().day.at("16:00:00").do(send_message1)
-schedule.every().day.at("19:10:00").do(send_message1)
-schedule.every().day.at("23:00:00").do(send_message1)
+schedule.every().day.at("19:35:00").do(send_message1)
+schedule.every().day.at("19:36:00").do(send_message1)
 schedule.every().day.at("00:00:00").do(send_message1)
 
 
@@ -36,7 +36,10 @@ class ScheduleMessage():
 def telegram_bot(token):
     @bot.message_handler(commands=["start"])
     def start_message(message):
-        bot.send_message(message.chat.id, 'Здаров битконисsт')
+        bot.send_message(message.chat.id, f'Коллеги, не забываем проставлять оценки смен!\n'
+                                        'Закрываем смену в DarkStore -> \nЗаходим в Самокат Про ->\n'
+                                        'Нажимаем на ваши отработанные часы в сегодняшний день ->\n'
+                                        'Оцениваем смену')
 
     bot.polling()
 
