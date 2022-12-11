@@ -10,15 +10,15 @@ bot = telebot.TeleBot(token)
 
 
 def send_message1():
-    bot.send_message('@testbotchatlis', 'Коллеги, не забываем проставлять оценки смен!'
-                                        'Закрываем смену в DarkStore -> заходим в Самокат Про -> '
-                                        '-> Нажимаем на ваши часы в сегодняшний день ->'
+    bot.send_message('@testbotchatlis', f'Коллеги, не забываем проставлять оценки смен!\n'
+                                        'Закрываем смену в DarkStore -> \nЗаходим в Самокат Про ->\n'
+                                        'Нажимаем на ваши отработанные часы в сегодняшний день ->\n'
                                         'Оцениваем смену')
 
 
 schedule.every().day.at("16:00:00").do(send_message1)
-schedule.every().day.at("19:40:00").do(send_message1)
-schedule.every().day.at("19:41:00").do(send_message1)
+schedule.every().day.at("18:00:00").do(send_message1)
+schedule.every().day.at("23:00:00").do(send_message1)
 schedule.every().day.at("00:00:00").do(send_message1)
 
 
@@ -36,7 +36,7 @@ class ScheduleMessage():
 def telegram_bot(token):
     @bot.message_handler(commands=["start"])
     def start_message(message):
-        bot.send_message(message.chat.id, f'Коллеги, не забываем проставлять оценки смен!\n'
+        bot.send_message('@testbotchatlis', f'Коллеги, не забываем проставлять оценки смен!\n'
                                         'Закрываем смену в DarkStore -> \nЗаходим в Самокат Про ->\n'
                                         'Нажимаем на ваши отработанные часы в сегодняшний день ->\n'
                                         'Оцениваем смену')
