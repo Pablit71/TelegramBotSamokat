@@ -9,17 +9,45 @@ from tokens import token
 bot = telebot.TeleBot(token)
 
 
-def send_message1():
-    bot.send_message('@letnya16k3', f'Коллеги, не забываем проставлять оценки смен!\n'
+def send_message_16():
+    bot.send_message('@letnya16k3', f'Коллеги, не забываем проставлять оценки смен кто до 16!\n'
                                         'Закрываем смену в DarkStore -> \nЗаходим в Самокат Про ->\n'
                                         'Нажимаем на ваши отработанные часы в сегодняшний день ->\n'
                                         'Оцениваем смену')
 
+def send_message_18():
+    bot.send_message('@letnya16k3', f'Коллеги, не забываем проставлять оценки смен кто до 18!\n'
+                                        'Закрываем смену в DarkStore -> \nЗаходим в Самокат Про ->\n'
+                                        'Нажимаем на ваши отработанные часы в сегодняшний день ->\n'
+                                        'Оцениваем смену\n'
+                                    'Спасибо за смену)')
 
-schedule.every().day.at("16:00:00").do(send_message1)
-schedule.every().day.at("18:00:00").do(send_message1)
-schedule.every().day.at("23:00:00").do(send_message1)
-schedule.every().day.at("00:00:00").do(send_message1)
+def send_message_20():
+    bot.send_message('@letnya16k3', f'Коллеги, не забываем проставлять оценки смен кто до 20!\n'
+                                        'Закрываем смену в DarkStore -> \nЗаходим в Самокат Про ->\n'
+                                        'Нажимаем на ваши отработанные часы в сегодняшний день ->\n'
+                                        'Оцениваем смену\n'
+                                    'Спасибо за смену)')
+
+def send_message_23():
+    bot.send_message('@letnya16k3', f'Коллеги, не забываем проставлять оценки смен кто до 23!\n'
+                                        'Закрываем смену в DarkStore -> \nЗаходим в Самокат Про ->\n'
+                                        'Нажимаем на ваши отработанные часы в сегодняшний день ->\n'
+                                        'Оцениваем смену\n'
+                                    'Спасибо за смену)')
+def send_message_00():
+    bot.send_message('@letnya16k3', f'Коллеги, не забываем проставлять оценки смен!\n'
+                                        'Закрываем смену в DarkStore -> \nЗаходим в Самокат Про ->\n'
+                                        'Нажимаем на ваши отработанные часы в сегодняшний день ->\n'
+                                        'Оцениваем смену\n'
+                                    'Всем доброй ночи!)Спасибо за смену)')
+
+
+schedule.every().day.at("16:00:00").do(send_message_16)
+schedule.every().day.at("18:00:00").do(send_message_18)
+schedule.every().day.at("18:00:00").do(send_message_20)
+schedule.every().day.at("23:00:00").do(send_message_23)
+schedule.every().day.at("00:00:00").do(send_message_00)
 
 
 class ScheduleMessage():
@@ -39,7 +67,8 @@ def telegram_bot(token):
         bot.send_message('@testbotchatlis', f'Коллеги, не забываем проставлять оценки смен!\n'
                                         'Закрываем смену в DarkStore -> \nЗаходим в Самокат Про ->\n'
                                         'Нажимаем на ваши отработанные часы в сегодняшний день ->\n'
-                                        'Оцениваем смену')
+                                        'Оцениваем смену\n'
+                                    'Всем доброй ночи!)Спасибо за смену)')
 
     bot.polling()
 
