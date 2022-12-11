@@ -17,8 +17,8 @@ def send_message1():
 
 
 schedule.every().day.at("16:00:00").do(send_message1)
-schedule.every().day.at("19:35:00").do(send_message1)
-schedule.every().day.at("19:36:00").do(send_message1)
+schedule.every().day.at("19:40:00").do(send_message1)
+schedule.every().day.at("19:41:00").do(send_message1)
 schedule.every().day.at("00:00:00").do(send_message1)
 
 
