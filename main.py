@@ -53,12 +53,17 @@ def send_message_morning():
     bot.send_message('@letnya16k3', 'Всем доброе утро!\n'
                                     'Не опаздываем на смену, предупреждаем если по какой-либо причине опаздываете, '
                                     'написав в чат сюда!')
+def send_message_change():
+    bot.send_message('@letnya16k3', 'А так же не забываем проставлять доступность на 2 недели вперед!')
 
 
 schedule.every().day.at("07:15:00").do(send_message_morning)
 schedule.every().day.at("16:00:00").do(send_message_16)
+schedule.every().day.at("16:01:00").do(send_message_change)
 schedule.every().day.at("18:00:00").do(send_message_18)
+schedule.every().day.at("18:01:00").do(send_message_change)
 schedule.every().day.at("20:00:00").do(send_message_20)
+schedule.every().day.at("20:01:00").do(send_message_change)
 schedule.every().day.at("23:00:00").do(send_message_23)
 schedule.every().day.at("00:00:00").do(send_message_00)
 
